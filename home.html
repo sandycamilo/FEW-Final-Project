@@ -2,15 +2,39 @@
 <html>
     <head>
         <title>FINAL</title>
+        <link rel="stylesheet" href="styles/home.css">
+
+        <style>
+            #slides {
+                width: 1200px;
+                height: 800px;
+                margin: auto;
+            }
+            .quiz-slide-indicators {
+                z-index: 1;
+                height:100%;
+                width: 100%;
+                display: flex; 
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center
+            }
+        </style>
     </head>
-
     <body>
+        <!-- SLIDE QUESTIONS -->
+        <div id="quiz" class="container quiz">
+            <!-- quiz questions -->
+        </div>
 
+        <!-- QUIZ SLIDES -->
+        <div id="slides" class="quiz-slide-show" data-delay="3000" data-transition="400">
+            <div class="slides-inner">
         
         <!-- Welcome display -->
-            Photo
+            <img src="images/unnamed.jpg" width="1200" height="800" alt="wouldyourather?">
         <!-- Slide 1 -->
-            instructions
+            <p><h1>Here is how to play</h1></p>
         <!-- Slide 2 -->
             Questions -- user input
         <!-- Slide 3 -->
@@ -19,6 +43,59 @@
         <!-- Slide 4 -->
             bye - confirmation it was sent
 
-        
+        <!-- SCRIPTS -->
+        <script src="styles/home.js">
+            const questions = [
+                {
+                    q:'How are you feeling today?',
+                    a:[
+                        'happy',
+                        'angry',
+                        'relaxed',
+                        'silly',
+                        'sad',
+                        "i don't know"
+                    ],
+                    q:'What is your favorite color?',
+                    a:[
+                        'red',
+                        'yellow',
+                        'pink',
+                        'purple',
+                        'black',
+                        'white'
+                    ],
+                    q:'What is your favorite animal?',
+                    a:[ 
+                        'bird',
+                        'elephant',
+                        'puma',
+                        'bear',
+                        'whale',
+                        'lion'
+                    ],
+                }
+            ]
+
+            function init() {
+                const quizEl = document.getElementById('quiz')
+                let quizStr = " "
+            }
+
+            quizEl.innerHTML = quizStr
+
+            quizEl.addEventListener('submit', function(e){
+                e.preventDefault()
+            })
+
+            init()
+            </script>
+            </div>
+            
+            <a href="#" class="quiz-next-button"></a>
+            <a href="#" class="quiz-previous-button"></a>
+            
+        </div>
+        <!-- <script src="styles/home.js"></script> -->
     </body>
 </html>
