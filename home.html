@@ -17,85 +17,43 @@
                 display: flex; 
                 flex-direction: row;
                 justify-content: space-between;
-                align-items: center
+                align-items: center;
             }
         </style>
     </head>
     <body>
-        <!-- SLIDE QUESTIONS -->
-        <div id="quiz" class="container quiz">
-            <!-- quiz questions -->
-        </div>
-
-        <!-- QUIZ SLIDES -->
+        <!-- JS Slides -->
         <div id="slides" class="quiz-slide-show" data-delay="3000" data-transition="400">
-            <div class="slides-inner">
-        
         <!-- Welcome display -->
-            <img src="images/unnamed.jpg" width="1200" height="800" alt="wouldyourather?">
-        <!-- Slide 1 -->
-            <p><h1>Here is how to play</h1></p>
-        <!-- Slide 2 -->
-            Questions -- user input
-        <!-- Slide 3 -->
-            Text generated 
-            send text to your phone 
-        <!-- Slide 4 -->
-            bye - confirmation it was sent
-
-        <!-- SCRIPTS -->
-        <script src="styles/home.js">
-            const questions = [
-                {
-                    q:'How are you feeling today?',
-                    a:[
-                        'happy',
-                        'angry',
-                        'relaxed',
-                        'silly',
-                        'sad',
-                        "i don't know"
-                    ],
-                    q:'What is your favorite color?',
-                    a:[
-                        'red',
-                        'yellow',
-                        'pink',
-                        'purple',
-                        'black',
-                        'white'
-                    ],
-                    q:'What is your favorite animal?',
-                    a:[ 
-                        'bird',
-                        'elephant',
-                        'puma',
-                        'bear',
-                        'whale',
-                        'lion'
-                    ],
-                }
-            ]
-
-            function init() {
-                const quizEl = document.getElementById('quiz')
-                let quizStr = " "
-            }
-
-            quizEl.innerHTML = quizStr
-
-            quizEl.addEventListener('submit', function(e){
-                e.preventDefault()
-            })
-
-            init()
-            </script>
+            <div class="slides-inner">
+                <div class=slide-item>
+                    <img src="images/unnamed.jpg" width="1200" height="800" alt="wouldyourather?">
+                </div>
+        <!-- Rules -->
+                <div class="slide-item">
+                    <img src="images/unnamed.jpg" width="1200" height="800" alt="wouldyourather?">
+                </div>
+        <!-- Quiz -->
+                <div class="slide-item">
+                    <div id="quiz">
+                      <!-- questions here-->
+                    </div>
+                    <button id="submit">Get Results</button>
+                </div>       
+        <!-- Text generated -->
+                <div class="slide-item">
+                    <div id="results">
+                        <!-- text -->
+                    </div>
+                </div>
+         <!-- Goodbye -->
+                <div class="slide-item">
+                    <img src="images/unnamed.jpg" width="1200" height="800" alt="wouldyourather?">
+                </div>
             </div>
-            
             <a href="#" class="quiz-next-button"></a>
-            <a href="#" class="quiz-previous-button"></a>
-            
+            <a href="#" class="quiz-previous-button"></a>  
         </div>
-        <!-- <script src="styles/home.js"></script> -->
+        <script src="styles/home.js"></script>
     </body>
 </html>
