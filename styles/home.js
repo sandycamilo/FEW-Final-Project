@@ -58,98 +58,87 @@
     }) ()
 
 
-    var myQuestions = [
-        { 
-            question: "What is your favorite day of the week?",
-            answers: {
-                a: 'Monday',
-                b: 'Tuesday',
-                c: 'Wednesday',
-                d: 'Thursday', 
-                e: 'Friday',
-                f: 'Saturday', 
-                g: 'Sunday'
-            }  
-        },
-        {
-            question: "Which color do you prefer?",
-            answers: {
-                a: 'Yellow', 
-                b: 'Brown', 
-                c: 'Green', 
-                d: 'Orange',
-                e: 'Pink',
-                f: 'Indigo',
-                g: 'Red'
-            }
-        },
-        {
-            question: "Pick a number", 
-            answers: {
-                a: '90',
-                b: '2',
-                c: '17',
-                d: '8',
-                e: '3',
-                f: '354',
-                g: '100'
-            }
-        },
-    ];
+ const quizContainer = document.getElementById('quiz');
+ const resultsContainer = document.getElementById('results');
+ const submitButton = document.getElementById('submit');
 
-    const quizContainer = document.getElementById('#quiz')
-    const resultsContainer = document.getElementById('#results')
-    const submitButton = document.getElementById('#submit')
+ function buildQuiz(){
+     const output = [];
 
-    generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton)
+     myQuestions.forEach(
+         (currentQuestion, questionNumber) => {
+             const answers = [];
 
-    function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
+             for(letter in currentQuestion.answers){
+                 answers.push(
+                     `<label>
+                         <input type="radio" name="question${questionNumber}" value="${letter}">
+                             ${letter} :
+                             ${currentQuestion.answers[letter]}
+                     </label>`
+                 );
+             }
 
-        function showQuestions(questions, quizContainer){
-           var output = [];
-           var answers;
+             output.push(
+                 `<div class="slide">
+                 <div class="question"> ${currentQuestion.question} </div>
+                 <div class="answers"> ${answers.join('')} </div>
+                 </div>`
+             );
+         }
+     );
 
-           for(var i=0; i<questions.length; i++){
-               answers = [];
+     quizContainer.innerHTML = output.join('');
+ }
 
-               for(letter in questions[i].answers){
-                   answers.push(
-                       '<label>'
-                       + '<input type="radio" name="questions '+i+'" value="'+letter+'">'
-                       + letter + ': '
-                       + questions[i].answers[letter]
-                    + '</label>'
-                   );
-               }
+ function showResults(){
 
-               output.push(
-                   'div class="questions">' + questions[i].question + '</div>'
-                   + '<div class="answers">' + answers.join('') + '</div>'
-               );
-           }
+    const answerContainers = quizContainer.querySelectorAll('.answers');
 
-           quizContainer.innerHTML = output.join('');
+    let numCorrect = 0;
+
+    myQuestions.forEach( (currentQuestion, questionNumber) => {
+        
+        const answerContainer = answerContainers[questionNumber];
+        const selector = 'input[name=question'+questionNumber+']:checked';
+        const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+        if(userAnswer===currentQuestion.correctAnswer){
+            numCorrect++;
+
+            answerContainers[questionNumber].style.color = 'lightgreen';
         }
 
-
-        function showResults(questions, quizContainer, resultsContainer){
-            var answerContainers = quizContainer.querySelectorAll('.answers');
-
-            var userAnswer = '';
-
-            for(var i=0; i<questions.length; i++){
-                userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
-            }
-
-        showQuestions(questions, quizContainer);
-
-        submitButton.onclick = function(){
-            showResults(questions, quizContainer, resultsContainer);
+        else {
+            answerContainers[questionNumber].style.color= "red"; 
         }
+    });
 
-        } 
-    }
+    resultsContainer.innerHTML = numCorrect + 'our of' + myQuestions.length;
+ }
 
 
+ buildQuiz();
 
+ submitButton.addEventListener('click', showResults);
 
+ const myQuestions = [
+     {
+         question: "What color is the sky?",
+         answers: {
+             a: "Red", 
+             b: "Yellow", 
+             c: "Blue"
+         },
+         correctAnswer: "c"
+     },
+     {
+         question: "Where is Waldo?",
+         answers: {
+             a: "Exploring the Pacific Ocean",
+             b: "Sitting in a tree", 
+             c: "Minding his own business"
+         },
+         correctAnswer: "c"
+     }
+ ];
