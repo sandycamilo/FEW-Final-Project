@@ -62,6 +62,27 @@
  const resultsContainer = document.getElementById('results');
  const submitButton = document.getElementById('submit');
 
+ const myQuestions = [
+    {
+        question: "What color is the sky?",
+        answers: {
+            a: "Red", 
+            b: "Yellow", 
+            c: "Blue"
+        },
+        correctAnswer: "c"
+    },
+    {
+        question: "Where is Waldo?",
+        answers: {
+            a: "Exploring the Pacific Ocean",
+            b: "Sitting in a tree", 
+            c: "Minding his own business"
+        },
+        correctAnswer: "c"
+    }
+];
+
  function buildQuiz(){
      const output = [];
 
@@ -122,23 +143,3 @@
 
  submitButton.addEventListener('click', showResults);
 
- const myQuestions = [
-     {
-         question: "What color is the sky?",
-         answers: {
-             a: "Red", 
-             b: "Yellow", 
-             c: "Blue"
-         },
-         correctAnswer: "c"
-     },
-     {
-         question: "Where is Waldo?",
-         answers: {
-             a: "Exploring the Pacific Ocean",
-             b: "Sitting in a tree", 
-             c: "Minding his own business"
-         },
-         correctAnswer: "c"
-     }
- ];
