@@ -1,3 +1,4 @@
+//SLIDES
 (function() {
 
     const slides = document.getElementById('slides')
@@ -57,6 +58,7 @@
 
     }) ()
 
+//QUIZ IN SLIDES 3 & 4 
 
  const quizContainer = document.getElementById('quiz');
  const resultsContainer = document.getElementById('results');
