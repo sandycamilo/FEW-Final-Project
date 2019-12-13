@@ -4,7 +4,7 @@
     const slides = document.getElementById('slides')
     const slidesInner = slides.querySelector('.slides-inner')
 
-    const images = slidesInner.querySelectorAll('img')
+    const images = slidesInner.querySelectorAll('.slide-item')
     const slideWidth = slides.clientWidth
 
     const nextButton = slides.querySelector('.quiz-next-button')
@@ -51,9 +51,9 @@
         slidesInner.style.transform = `translate3d(${index * -slideWidth}px,0,0)`
     }
 
-    setInterval(function() {
+    /*setInterval(function() {
         nextSlide()
-    }, 5000)
+    }, 5000)*/
     
 
     }) ()
