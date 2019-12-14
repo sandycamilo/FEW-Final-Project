@@ -137,7 +137,7 @@
         }
     });
 
-    resultsContainer.innerHTML = numCorrect + 'our of' + myQuestions.length;
+    resultsContainer.innerHTML = numCorrect + 'out of' + myQuestions.length;
  }
 
 
