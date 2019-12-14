@@ -85,8 +85,8 @@ body {
 #submit {
 	font-family: sans-serif;
 	font-size: 20px;
-	background-color: #297;
-	color: #fff;
+	background-color: white;
+	color: black;
 	border: 0px;
 	border-radius: 3px;
 	padding: 20px;
@@ -95,7 +95,7 @@ body {
 }
 
 #submit:hover {
-	background-color: #3a8;
+	background-color: pink;
 }
 
 .slide {
@@ -115,7 +115,7 @@ body {
     position: relative;
     height: 200px;
     margin-top: 40px;
-    background-color: white;
+    background-color: peachpuff;
 }
 
 .grid-container {
@@ -135,7 +135,7 @@ body {
     text-align: center;
     font-size: 20px;
     padding: 20px 0;
-    background-color: #3a8;
+    background-color:  peachpuff;
 }
 
 
@@ -160,8 +160,7 @@ body {
 #results {
     display: flex;
     flex-direction: row;
-    background-color: white;
-    text-align: center;
+    background-color: whitesmoke;
     width: 1200px;
     height: 1200px;
 }
