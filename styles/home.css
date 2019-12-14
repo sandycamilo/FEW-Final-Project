@@ -140,12 +140,21 @@ body {
 
 
 .container1 {
-    display: flex;
-    flex-direction: column;
     padding: 390px 490px;
     background-color: whitesmoke;
     width: 1200px;
     height: 900px;
+}
+
+#goodbye {
+    background-color: peachpuff;
+    padding: 0px 100px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    width: 70px;
+
 }
 
 #results {
