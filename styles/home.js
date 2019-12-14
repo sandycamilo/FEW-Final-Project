@@ -51,9 +51,9 @@
         slidesInner.style.transform = `translate3d(${index * -slideWidth}px,0,0)`
     }
 
-    /*setInterval(function() {
-        nextSlide()
-    }, 5000)*/
+    // setInterval(function() {
+    //     nextSlide()
+    // }, 5000)
     
 
     }) ()

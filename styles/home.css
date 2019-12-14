@@ -45,6 +45,7 @@ body {
 
 .quiz-next-button {
     right: 1em;
+    background-color: red;
 }
 
 .quiz-next-button::after {
@@ -55,10 +56,12 @@ body {
     border-top: 4px solid #fff;
     border-right: 4px solid #fff;
     transform: rotate(45deg);
+    background-color: red;
 }
 
 .quiz-previous-button {
     left: 1em;
+    background-color: red;
 }
 
 .quiz-previous-button::after {
@@ -69,6 +72,7 @@ body {
     border-bottom: 4px solid #fff;
     border-left: 4px solid #fff;
     transform: rotate(45deg);
+    background-color: red;
 }
 
 .question{
@@ -111,4 +115,14 @@ body {
     position: relative;
     height: 200px;
     margin-top: 40px;
+    background-color: white;
+}
+
+.container1 {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    text-align: center;
+    width: 1200px;
+    height: 1200px;
 }
