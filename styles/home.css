@@ -123,6 +123,17 @@ body {
     justify-content: space-evenly;
 }
 
+#results {
+    background-color: peachpuff;
+    margin-top: -100px;
+    display: flex;
+    flex-direction: column;
+    padding: 150px;
+    align-content: center;
+    height: 30px;
+    width: 70px; 
+}
+
 #quiz {
     background-color: peachpuff;
     margin-top: 0px;
@@ -169,12 +180,4 @@ body {
     height: 100px;
     width: 70px;
 
-}
-
-#results {
-    display: flex;
-    flex-direction: column;
-    background-color: whitesmoke;
-    width: 1200px;
-    height: 1000px;
 }
