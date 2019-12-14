@@ -125,13 +125,15 @@ body {
 
 #results {
     background-color: peachpuff;
-    margin-top: -100px;
+    margin-top: -180px;
     display: flex;
-    flex-direction: column;
-    padding: 150px;
+    flex-direction: row;
+    padding: 0 150px;
     align-content: center;
-    height: 30px;
-    width: 70px; 
+    align-items: center;
+    height: 600px;
+    width: 400px; 
+    font-size: 50px;
 }
 
 #quiz {
