@@ -1,0 +1,33 @@
+body {
+    background-color: blue;
+    font-size: 20px;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100vh;
+}
+
+.game-info {
+    color: white;
+    font-size: 4em;
+}
+
+.card {
+    background-color: black;
+    height: 175px;
+    width: 125px;
+}
+
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 10px;
+    margin: 50px;
+    justify-content: center;
+}
