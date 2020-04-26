@@ -16,6 +16,7 @@ body {
     width: 640px;
     height: 640px;
     margin: auto;
+    perspective: 100px;
 }
 
 .questioncard {
@@ -24,6 +25,8 @@ body {
     height: calc(33.3% - 10px);
     position: relative;
     transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s; 
 }
 
 .questioncard:active {
@@ -38,6 +41,15 @@ body {
     position: absolute;
     border-radius: 5px;
     background-color: white;
+    backface-visibility: hidden;
+}
+
+.front-face {
+    transform: rotateY(180deg);
+}
+
+.card.flip {
+    transform: rotateY(180deg);
 }
 
 img {
