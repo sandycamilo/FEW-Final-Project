@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .maincontainer {
+                position: relative;
+                width: 250px;
+                height: 320px;
+            }
+
+            .thecard {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                transform-style: preserve-3d;
+                transition: all 1s ease;
+                background: yellow;
+            }
+
+            .thecard:hover {
+                transform: rotateY(180deg);
+            }
+
+            .thefront {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+                background-color: #ffc728;
+                color: #333;
+                text-align: center;
+                font-family: sans-serif;
+                border-radius: 20px;
+                font-size: 18px;
+                font-weight: bold;
+            }
+
+            .theback {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+                background-color: red;
+                color: #333;
+                transform: rotateY(180deg);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="maincontainer">
+            <div class="thecard">
+                <div class="thefront"> question 1 </div>
+                <div class="theback"> what are you listening to? </div>
+            </div>
+        </div>
+    </body>
+</html>
